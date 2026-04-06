@@ -46,12 +46,37 @@
       /* warm gold */
     }
 
-    .topbar {
-      background: var(--primary-dark);
-      color: #fff;
-      text-align: center;
-      font-size: 13px;
-      padding: 6px 10px;
+    .announcement-bar {
+      background: linear-gradient(90deg, #3A1C00, #5C2D00);
+      /* dark brown */
+      color: #f4e1c1;
+      /* light cream */
+      overflow: hidden;
+      border-bottom: 1px solid #EAE0C5;
+      font-size: 14px;
+    }
+
+    .announcement-track {
+      display: flex;
+      width: max-content;
+      animation: scrollLoop 18s linear infinite;
+    }
+
+    .track-content {
+      white-space: nowrap;
+      padding: 10px 50px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    @keyframes scrollLoop {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
     }
 
     header {
@@ -182,8 +207,7 @@
     .product-section h2 {
       font-size: 42px;
       font-weight: 500;
-      color: var(--primary-dark
-      );
+      color: var(--primary-dark);
       margin-bottom: 60px;
       letter-spacing: 1px;
     }
@@ -367,6 +391,7 @@
       color: #0b1c3d;
       margin-bottom: 25px;
     }
+
     .dropdown-menu-custom a {
       color: #222 !important;
     }
@@ -442,7 +467,7 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     }
 
-     /* ===== FIX PRODUCT STRUCTURE ===== */
+    /* ===== FIX PRODUCT STRUCTURE ===== */
 
     .product-media {
       position: relative;
@@ -459,7 +484,7 @@
       z-index: 3;
     }
 
-      /* ===== CORPORATE / LUXURY ZIG-ZAG SECTION ===== */
+    /* ===== CORPORATE / LUXURY ZIG-ZAG SECTION ===== */
 
     .corporate-section {
       background: #fbf6ec;
@@ -511,7 +536,7 @@
       margin-bottom: 25px;
     }
 
-     /* ========================= */
+    /* ========================= */
     /* ===== ABOUT SECTION ===== */
     /* ========================= */
 
@@ -660,7 +685,7 @@
       color: #f2f2f2;
     }
 
-     /* ========================= */
+    /* ========================= */
     /* ===== CONTACT SECTION === */
     /* ========================= */
 
@@ -838,6 +863,7 @@
       z-index: 999;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
     }
+
     /* NAVBAR + FOOTER */
     .topbar,
     .navbar-custom,
@@ -903,7 +929,7 @@
       color: var(--accent);
     }
 
-            /* ===== CART THEME (MATCHED WITH SITE) ===== */
+    /* ===== CART THEME (MATCHED WITH SITE) ===== */
 
     .cart-overlay {
       position: fixed;
@@ -915,9 +941,10 @@
       transition: .3s;
       z-index: 999;
     }
-  #cartCount {
-    color: white;
-  }
+
+    #cartCount {
+      color: white;
+    }
 
     .cart-overlay.active {
       opacity: 1;
@@ -1097,7 +1124,7 @@
       text-align: right;
     }
 
-   
+
 
     .cart-btn-wrap .add-to-cart {
       all: unset;
@@ -1125,277 +1152,289 @@
       background: var(--primary-dark);
     }
 
-     /* ============================= */
+    /* ============================= */
     /* MOBILE & TABLET RESPONSIVE FIX */
     /* ============================= */
-@media (max-width: 992px) {
+    @media (max-width: 992px) {
 
-  /* NAVBAR */
-  .navbar-custom {
-    flex-wrap: nowrap;
-    padding: 12px 16px;
-  }
+      /* NAVBAR */
+      .navbar-custom {
+        flex-wrap: nowrap;
+        padding: 12px 16px;
+      }
 
-  .nav-left,
-  .nav-right {
-    flex: unset;
-    gap: 16px;
-  }
+      .nav-left,
+      .nav-right {
+        flex: unset;
+        gap: 16px;
+      }
 
-  .logo img {
-    height: 60px;
-  }
+      .logo img {
+        height: 60px;
+      }
 
-  /* HIDE DESKTOP RIGHT MENU */
-  .nav-right .menu {
-    display: none;
-  }
+      /* HIDE DESKTOP RIGHT MENU */
+      .nav-right .menu {
+        display: none;
+      }
 
-  /* HAMBURGER */
-  .hamburger {
-    display: block;
-  }
+      /* HAMBURGER */
+      .hamburger {
+        display: block;
+      }
 
-  /* MOBILE MENU */
-  .menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 50%;
-    background: var(--primary);
-    flex-direction: column;
-    z-index: 999;
-  }
+      /* MOBILE MENU */
+      .menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 50%;
+        background: var(--primary);
+        flex-direction: column;
+        z-index: 999;
+      }
 
-  .menu a {
-    padding: 14px 18px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
+      .menu a {
+        padding: 14px 18px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
 
-  .menu.show {
-    display: flex;
-  }
-
-
-}
-@media (max-width: 992px) {
-
-  .dropdown-menu-custom {
-    position: static;
-    display: block;
-    max-height: 0;
-    overflow: hidden;
-    opacity: 1;
-    visibility: visible;
-    transition: max-height 0.35s ease;
-  }
-
-  .dropdown.open .dropdown-menu-custom {
-    max-height: 1000px; /* safe large value */
-  }
-
-}
-
-@media (max-width: 992px) {
-
-  .menu {
-    height: auto !important;
-    overflow: visible !important;
-  }
-
-}
-@media (max-width: 992px) {
-
-  .dropdown-menu-custom li,
-  .dropdown-menu-custom a {
-    display: block;
-    width: 100%;
-  }
-
-}
-
-/* ============================= */
-/* ===== TABLET (786–768px) ==== */
-/* ============================= */
-
-@media (max-width: 768px) {
-
-  /* HERO / SLIDER */
-  .carousel-item {
-    height: 60vh;
-  }
-
-  /* PRODUCT CATEGORY */
-  .product-card {
-    height: 300px;
-  }
-
-  .product-section h2 {
-    font-size: 28px;
-    margin-bottom: 40px;
-  }
-
-  /* TABS */
-  .tabs {
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-
-  .tab {
-    font-size: 14px;
-  }
-
-  /* PRODUCTS GRID */
-  .products-wrapper {
-    position: static;
-  }
-
-  .products {
-    position: static;
-    transform: none;
-    opacity: 1;
-    pointer-events: auto;
-    display: none;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-
-  .products.active {
-    display: grid;
-  }
-
-  .product {
-    padding: 25px 12px;
-  }
-
-  /* NUTRITION POPUP – TAP SUPPORT */
-  .product:active .nutrition-popup {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* GIFT SECTION */
-  .gift-card img {
-    height: 300px;
-  }
-
-  .gift-content {
-    left: 15px;
-    bottom: 15px;
-    max-width: 90%;
-  }
-
-  .gift-content h4 {
-    font-size: 20px;
-  }
-
-  /* CORPORATE SECTION */
-  .corporate-block,
-  .corporate-block.reverse {
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .corp-img img {
-    height: 360px;
-  }
-
-  .corp-content {
-    text-align: center;
-  }
-
-  .corp-content h3 {
-    font-size: 26px;
-  }
-
-  .corp-content p {
-    font-size: 14px;
-  }
-
-  /* ABOUT */
-  .about-hero {
-    height: 45vh;
-  }
-
-  .about-hero h1 {
-    font-size: 36px;
-  }
-
-  .about-content .container {
-    flex-direction: column;
-    gap: 50px;
-  }
-
-  .about-image img {
-    height: 380px;
-  }
-
-  .about-features .container {
-    grid-template-columns: 1fr;
-  }
-
-  /* CONTACT */
-  .contact-container {
-    grid-template-columns: 1fr;
-    padding: 45px;
-  }
-
-  .contact-map iframe {
-    min-height: 380px;
-  }
-
-  /* FOOTER */
-  .footer {
-    text-align: center;
-  }
-
-}
+      .menu.show {
+        display: flex;
+      }
 
 
-/* ============================= */
-/* ===== MOBILE (≤480px) ======= */
-/* ============================= */
+    }
 
-@media (max-width: 480px) {
+    @media (max-width: 992px) {
 
-  /* HERO */
-  .carousel-item {
-    height: 45vh;
-  }
+      .dropdown-menu-custom {
+        position: static;
+        display: block;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 1;
+        visibility: visible;
+        transition: max-height 0.35s ease;
+      }
 
-  /* PRODUCTS */
-  .products {
-    grid-template-columns: 1fr;
-  }
+      .dropdown.open .dropdown-menu-custom {
+        max-height: 1000px;
+        /* safe large value */
+      }
 
-  /* CART */
-  .cart-popup {
-    width: 100%;
-  }
+    }
 
-  /* WHATSAPP */
-  .whatsapp-float {
-    width: 48px;
-    height: 48px;
-    font-size: 22px;
-  }
+    @media (max-width: 992px) {
 
-  /* HEADINGS */
-  .gift-section h2,
-  .contact-section h2 {
-    font-size: 30px;
-  }
+      .menu {
+        height: auto !important;
+        overflow: visible !important;
+      }
 
-}
+    }
+
+    @media (max-width: 992px) {
+
+      .dropdown-menu-custom li,
+      .dropdown-menu-custom a {
+        display: block;
+        width: 100%;
+      }
+
+    }
+
+    /* ============================= */
+    /* ===== TABLET (786–768px) ==== */
+    /* ============================= */
+
+    @media (max-width: 768px) {
+
+      /* HERO / SLIDER */
+      .carousel-item {
+        height: 60vh;
+      }
+
+      /* PRODUCT CATEGORY */
+      .product-card {
+        height: 300px;
+      }
+
+      .product-section h2 {
+        font-size: 28px;
+        margin-bottom: 40px;
+      }
+
+      /* TABS */
+      .tabs {
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .tab {
+        font-size: 14px;
+      }
+
+      /* PRODUCTS GRID */
+      .products-wrapper {
+        position: static;
+      }
+
+      .products {
+        position: static;
+        transform: none;
+        opacity: 1;
+        pointer-events: auto;
+        display: none;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .products.active {
+        display: grid;
+      }
+
+      .product {
+        padding: 25px 12px;
+      }
+
+      /* NUTRITION POPUP – TAP SUPPORT */
+      .product:active .nutrition-popup {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* GIFT SECTION */
+      .gift-card img {
+        height: 300px;
+      }
+
+      .gift-content {
+        left: 15px;
+        bottom: 15px;
+        max-width: 90%;
+      }
+
+      .gift-content h4 {
+        font-size: 20px;
+      }
+
+      /* CORPORATE SECTION */
+      .corporate-block,
+      .corporate-block.reverse {
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .corp-img img {
+        height: 360px;
+      }
+
+      .corp-content {
+        text-align: center;
+      }
+
+      .corp-content h3 {
+        font-size: 26px;
+      }
+
+      .corp-content p {
+        font-size: 14px;
+      }
+
+      /* ABOUT */
+      .about-hero {
+        height: 45vh;
+      }
+
+      .about-hero h1 {
+        font-size: 36px;
+      }
+
+      .about-content .container {
+        flex-direction: column;
+        gap: 50px;
+      }
+
+      .about-image img {
+        height: 380px;
+      }
+
+      .about-features .container {
+        grid-template-columns: 1fr;
+      }
+
+      /* CONTACT */
+      .contact-container {
+        grid-template-columns: 1fr;
+        padding: 45px;
+      }
+
+      .contact-map iframe {
+        min-height: 380px;
+      }
+
+      /* FOOTER */
+      .footer {
+        text-align: center;
+      }
+
+    }
 
 
+    /* ============================= */
+    /* ===== MOBILE (≤480px) ======= */
+    /* ============================= */
+
+    @media (max-width: 480px) {
+
+      /* HERO */
+      .carousel-item {
+        height: 45vh;
+      }
+
+      /* PRODUCTS */
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      /* CART */
+      .cart-popup {
+        width: 100%;
+      }
+
+      /* WHATSAPP */
+      .whatsapp-float {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+      }
+
+      /* HEADINGS */
+      .gift-section h2,
+      .contact-section h2 {
+        font-size: 30px;
+      }
+
+    }
   </style>
 </head>
 
 <body>
 
-  <div class="topbar">Free Delivery on Orders Above Rs.3000</div>
+  <div class="announcement-bar">
+    <div class="announcement-track">
+      <div class="track-content">
+        🥜 FRESH & ORGANIC DRY FRUITS 🥜 🚚 FREE DELIVERY OVER RS.2000 🚚 🎉 FLAT 10% OFF 🎉 💯 PREMIUM QUALITY
+        GUARANTEED 💯
+      </div>
+      <div class="track-content">
+        🥜 FRESH & ORGANIC DRY FRUITS 🥜 🚚 FREE DELIVERY OVER RS.2000 🚚 🎉 FLAT 10% OFF 🎉 💯 PREMIUM QUALITY
+        GUARANTEED 💯
+      </div>
+    </div>
+  </div>
 
   <header>
     <nav class="navbar-custom">
@@ -1421,7 +1460,7 @@
       </div>
 
       <div class="logo">
-        <img src="/img/maru.svg" alt="Logo">
+        <img src="img/logo.svg" alt="Logo">
       </div>
 
       <div class="nav-right">
@@ -1447,12 +1486,12 @@
   <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
 
-      <div class="carousel-item active" style="background-image:url('/img/imgi_62_67d42c2bdd71a.webp')"></div>
-      <div class="carousel-item" style="background-image:url('/img/imgi_56_6860107145cfa.webp')"></div>
-      <div class="carousel-item" style="background-image:url('/img/imgi_59_67af8b1db40cd.webp')"></div>
-      <div class="carousel-item" style="background-image:url('/img/imgi_55_68397f2f563f9.webp')"></div>
-      <div class="carousel-item" style="background-image:url('/img/imgi_185_66b09ceea8f93.webp')"></div>
-      <div class="carousel-item" style="background-image:url('/img/imgi_133_67af8b3ddfd73.webp')"></div>
+      <div class="carousel-item active" style="background-image:url('img/imgi_62_67d42c2bdd71a.webp')"></div>
+      <div class="carousel-item" style="background-image:url('img/imgi_56_6860107145cfa.webp')"></div>
+      <div class="carousel-item" style="background-image:url('img/imgi_59_67af8b1db40cd.webp')"></div>
+      <div class="carousel-item" style="background-image:url('img/imgi_55_68397f2f563f9.webp')"></div>
+      <div class="carousel-item" style="background-image:url('img/imgi_185_66b09ceea8f93.webp')"></div>
+      <div class="carousel-item" style="background-image:url('img/imgi_133_67af8b3ddfd73.webp')"></div>
     </div>
 
     <!-- Controls -->
@@ -1754,7 +1793,8 @@
           <h6 style="margin-top:15px;letter-spacing:1px;">Cocktail Nuts Salted</h6>
           <p style="margin:5px 0 10px;color:#0b1c3d;">Rs.675</p>
           <div class="cart-btn-wrap">
-            <button class="add-to-cart" data-name="Cocktail Nuts Salted" data-price="675" data-img="img/imgi_214_125.webp">
+            <button class="add-to-cart" data-name="Cocktail Nuts Salted" data-price="675"
+              data-img="img/imgi_214_125.webp">
               ADD TO CART
             </button>
           </div>
@@ -1882,7 +1922,8 @@
           </p>
 
           <div class="cart-btn-wrap">
-            <button class="add-to-cart" data-name="Mars Chocolate – 51 g" data-price="150" data-img="img/imgi_84_462.webp">
+            <button class="add-to-cart" data-name="Mars Chocolate – 51 g" data-price="150"
+              data-img="img/imgi_84_462.webp">
               ADD TO CART
             </button>
           </div>
@@ -2269,7 +2310,7 @@
       <button class="next-btn">Next</button>
     </div>
   </div>
- <script>
+  <script>
     function toggleMenu() {
       document.getElementById('menu').classList.toggle('show');
     }
@@ -2465,17 +2506,17 @@
     });
   </script>
   <script>
-  // MOBILE SHOP DROPDOWN
-  document.querySelectorAll('.shop-toggle').forEach(toggle => {
-    toggle.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
+    // MOBILE SHOP DROPDOWN
+    document.querySelectorAll('.shop-toggle').forEach(toggle => {
+      toggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
 
-      const dropdown = this.closest('.dropdown');
-      dropdown.classList.toggle('open');
+        const dropdown = this.closest('.dropdown');
+        dropdown.classList.toggle('open');
+      });
     });
-  });
-</script>
+  </script>
 
 
 
